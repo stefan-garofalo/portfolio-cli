@@ -1,7 +1,9 @@
 export default function Terminal() {
   return (
-    <div className="h-[55vh] overflow-y-auto mx-48 rounded-xl border border-slate-500">
-      Test
+    <div className="mx-48">
+      <span>Speaking of which... a <b>simpler</b> and <b>faster</b> approach to explore</span>
+      <div className="h-[45vh] overflow-y-auto  rounded-xl border border-slate-500">
+      </div>
     </div>
   )
 }
