@@ -1,5 +1,8 @@
 import Head from 'next/head'
 
+import Hero from '@/components/UI/hero'
+import Terminal from '@/components/terminal'
+
 export default function Home() {
   return (
     <>
@@ -10,7 +13,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className=''>
-        This is the home page. 
+        <Hero />
+        <Terminal/>
       </main>
     </>
   )
