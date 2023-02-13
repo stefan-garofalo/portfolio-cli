@@ -1,10 +1,6 @@
-import { Inter } from '@next/font/google'
-
-const inter = Inter({ subsets: ['latin'] })
-
 export default function Hero() {
   return (
-    <div className={`${inter.className} flex-center flex-col py-16`}>
+    <div className={`flex-center flex-col py-16`}>
       <h1 className='mb-3 text-7xl font-extrabold'>Stefan Garofalo</h1>
       <h2 className='mb-7 text-xl'>FRONT END DEVELOPER, TECH ENTHUSIAST</h2>
       <p className='w-1/2 text-center prose-2xl'>
