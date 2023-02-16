@@ -6,13 +6,13 @@ export default function Hero({ className }) {
       <TypeAnimation
         sequence={['Stefan Garofalo']}
         wrapper="h1"
-        className="mb-3 text-7xl font-extrabold"
+        className="mb-3 text-7xl 2xl:text-9xl font-extrabold"
         cursor={false}
       />
       <TypeAnimation
         sequence={['FRONT END DEVELOPER, TECH ENTHUSIAST']}
         wrapper="h2"
-        className="text-xl"
+        className="text-xl 2xl:text-4xl"
         cursor={false}
       />
     </div>
