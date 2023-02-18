@@ -1,5 +1,6 @@
 import Head from 'next/head'
 
+import Header from '@/components/UI/header'
 import Hero from '@/components/UI/hero'
 import Terminal from '@/components/terminal'
 
@@ -12,7 +13,8 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className='min-h-screen flex flex-col gap-y-[40vh]'>
+      <Header/>
+      <main className='min-h-screen flex flex-col gap-y-[40vh] pb-[10vh]'>
         <Hero className="h-screen"/>
         <Terminal/>
       </main>

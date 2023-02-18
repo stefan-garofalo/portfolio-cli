@@ -15,4 +15,7 @@
   .flex-between{
     @apply flex items-center justify-between;
   }
+  .contain {
+    @apply px-[12%]
+  }
 }
