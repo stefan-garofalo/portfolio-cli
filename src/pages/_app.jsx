@@ -1,5 +1,7 @@
-import '@/styles/globals.css'
+import dynamic from 'next/dynamic'
 import { JetBrains_Mono } from '@next/font/google'
+
+import '@/styles/globals.css'
 
 const jetBrainsMono = JetBrains_Mono({ subsets: ['latin'] })
 
