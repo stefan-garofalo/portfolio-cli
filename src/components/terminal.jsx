@@ -5,24 +5,23 @@ import commands from '@/config/commands.json'
 
 export default function Terminal() {
   const [command, setCommand] = useState('')
-
-  const commandList = {
-    help: commands.help,
-    clear: () => setCommand('')
-  }
-
-  function enterInput(e){
-    setCommand(e.target.value)
-  }
+  const [entered, setEntered] = useState(false)
 
   function enterCommand(e) {
-    if (e.target.value.includes('Command')) {
-      setCommand('')
+    if (e.key === 'Enter') {
+      e.preventDefault()
+      setCommand(commands[e.target.value] || 'Command not found: ' + e.target.value + '. Type "help" for a list of available commands.')
+      setEntered(true)
     }
-    e.key === 'Enter' && setCommand(commandList[command]
-      || `Command not found: ${e.target.value} \nType 'help' for a list of commands `)
   }
 
+  function changeValue(e) {
+    if (entered) {
+      e.target.value = ''
+      setEntered(false)
+    }
+    setCommand(e.target.value)
+  }
 
   return (
     <motion.section
@@ -38,8 +37,8 @@ export default function Terminal() {
       </div>
       <div>
         <label htmlFor="terminal" className="text-xl">Speaking of which... a <b>simpler</b> and <b>faster</b> approach to get right to the point</label>
-        <div name="terminal" className="relative h-[45vh] mt-2 rounded-xl border border-slate-500 bg-black/20">
-          <textarea className="w-full h-full text-lg bg-transparent" value={command} onInput={enterInput} onKeyDown={enterCommand}/>
+        <div name="terminal" className="relative h-[45vh] mt-2 rounded-xl border border-slate-500 bg-black/20"> 
+          <input className="w-full text-lg bg-transparent cursor-text" onKeyPress={enterCommand} value={command} onChange={changeValue}/>
           {/* <span className="font-bold text-red text-lg absolute top-0 left-0">
             guest
             <span className="text-blue">@portfolio-cli:</span>
